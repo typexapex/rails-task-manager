@@ -1,11 +1,15 @@
 <div class="wrapper" style="margin-left: 8px; margin-top: 8px;">
   <h1>My tasks</h1>
-
-  <% @tasks.each do |task| %>
-    <% if task.completed %>
-      <i class="far fa-check-square"></i> &nbsp;<%= link_to task.title, task_path(task) %><br>
-    <% else %>
-      <i class="far fa-square"></i> &nbsp;<%= link_to task.title, task_path(task) %><br>
+  <div class="index" style="border-bottom: 1px solid lightgray; padding-bottom: 16px;">
+    <% @tasks.each do |task| %>
+      <% if task.completed %>
+        <i class="far fa-check-square"></i> &nbsp;<%= link_to task.title, task_path(task) %><br>
+      <% else %>
+        <i class="far fa-square"></i> &nbsp;<%= link_to task.title, task_path(task) %><br>
+      <% end %>
     <% end %>
+  </div>
+  <%= link_to new_task_path do %>
+    <i class="fas fa-plus"></i> &nbsp;Add a new task
   <% end %>
 </div>
