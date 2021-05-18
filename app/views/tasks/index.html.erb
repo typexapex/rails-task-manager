@@ -1,9 +1,11 @@
-<h1>My tasks</h1>
+<div class="wrapper" style="margin-left: 8px; margin-top: 8px;">
+  <h1>My tasks</h1>
 
-<% @tasks.each do |task| %>
-  <% if task.completed %>
-    <i class="far fa-check-square"></i> &nbsp;<%= task.title %><br>
-  <% else %>
-    <i class="far fa-square"></i> &nbsp;<%= task.title %><br>
+  <% @tasks.each do |task| %>
+    <% if task.completed %>
+      <i class="far fa-check-square"></i> &nbsp;<%= link_to task.title, task_path(task) %><br>
+    <% else %>
+      <i class="far fa-square"></i> &nbsp;<%= link_to task.title, task_path(task) %><br>
+    <% end %>
   <% end %>
-<% end %>
+</div>
