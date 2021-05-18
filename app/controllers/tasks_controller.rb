@@ -21,6 +21,18 @@ def create
   end
 end
 
+def edit
+  @task = Task.find(params[:id])
+end
+
+def update
+  @task = Task.find(params[:id])
+  if @task.update(task_params)
+    redirect_to task_path(@task)
+  else
+    render 'edit.html.erb'
+  end
+end
 
 private
 

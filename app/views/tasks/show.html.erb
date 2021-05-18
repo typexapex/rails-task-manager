@@ -1,7 +1,11 @@
 <div class="wrapper" style="margin-left: 8px; margin-top: 8px;">
-  <h1><%= @task.title %></h1>
-
-  <div class="task-details" style="background-color: lightgray; padding: 24px; border: 1px solid gray; margin-left: 8px;">
+  <div class="d-flex justify-content-between" style="margin-right: 8px;">
+    <h1><%= @task.title %></h1>
+    <%= link_to edit_task_path do %>
+      <button type="button" class="btn btn-outline-secondary"><i class="far fa-edit"></i> &nbsp;Edit this task</button>
+    <% end %>
+  </div>
+  <div class="task-details" style="background-color: lightgray; padding: 24px; border: 1px solid gray; margin-left: 8px; margin-right: 8px;">
     <%= @task.details %>
   </div>
   <div class="task-completed" style="margin-bottom: 32px; border-bottom: 1px solid lightgray; padding-bottom: 24px; padding-top: 24px; margin-left: 8px;">
