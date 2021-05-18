@@ -1,11 +1,13 @@
 <div class="wrapper" style="margin-left: 8px; margin-top: 8px;">
   <h1>Edit <%= @task.title %></h1>
-  <div class="container-form" style="width: 800px; border-bottom: 1px solid gray; padding-top: 16px; padding-bottom: 16px; margin-bottom: 16px;">
+  <div class="container-form" style="border-bottom: 1px solid gray; padding-top: 16px; padding-bottom: 16px; margin-bottom: 16px;">
     <%= form_for @task do |f| %>
       <%= f.label :title %>
       <%= f.text_field :title, class: 'form-control' %>
       <%= f.label :details %>
       <%= f.text_area :details, class: 'form-control' %>
+      <%= f.label "Completed" %>
+      <%= f.check_box :completed %><br>
       <%= f.submit "Create Task" %>
     <% end -%>
   </div>

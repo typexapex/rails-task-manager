@@ -3,9 +3,11 @@
   <div class="index" style="border-bottom: 1px solid lightgray; padding-bottom: 16px;">
     <% @tasks.each do |task| %>
       <% if task.completed %>
-        <i class="far fa-check-square"></i> &nbsp;<%= link_to task.title, task_path(task) %><br>
+        <i class="far fa-check-square"></i> &nbsp;
+        <%= link_to task.title, task_path(task) %>&nbsp;&#183;&nbsp;
+        <%= link_to task_path(task), method: :delete, data: {confirm: 'Are you sure?'} do %><i class="fas fa-trash"></i><% end %><br>
       <% else %>
-        <i class="far fa-square"></i> &nbsp;<%= link_to task.title, task_path(task) %><br>
+        <i class="far fa-square"></i> &nbsp;<%= link_to task.title, task_path(task) %>&nbsp;&#183;&nbsp;<%= link_to task_path(task), method: :delete, data: {confirm: 'Are you sure?'} do %><i class="fas fa-trash"></i><% end %><br>
       <% end %>
     <% end %>
   </div>
